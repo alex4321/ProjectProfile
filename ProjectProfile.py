@@ -150,3 +150,6 @@ class ProjectProfile(sublime_plugin.EventListener):
 
 	def on_load(self, view):
 		ProjectProfile.use_views_profile(view)
+
+	def on_post_save(self, view):
+		ProjectProfile.use_views_profile(view)
