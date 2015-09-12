@@ -24,7 +24,16 @@ class ProjectProfileHelper:
 		if profiles is None:
 			return None
 		if not profiles.get(name) is None:
-			return profiles[name]
+			result = profiles[name]
+			profiles_extends = settings.get('profiles_extends')
+			if profiles_extends is None:
+				return result
+			else:
+				profile_extends = profiles_extends.get(name)
+				if not profile_extends is None:
+					return profile + profile_extends
+				else:
+					return result
 		return None
 
 	def profile_name():
