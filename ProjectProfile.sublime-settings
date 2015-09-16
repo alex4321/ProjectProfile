@@ -1,4 +1,5 @@
 {
 	"always": [],
-	"profiles": {}
+	"profiles": {},
+	"profiles_extends": {}
 }
